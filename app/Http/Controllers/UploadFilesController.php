@@ -59,7 +59,10 @@ class UploadFilesController extends Controller
     {
         $file = UploadFiles::find($id);
         if ($file !== null) {
-          unlink( base_path('public')."/documents/".$file->filesrc );
+          $path = base_path('public')."/documents/".$file->filesrc;
+          if (file_exists($path)) {
+            unlink( base_path('public')."/documents/".$file->filesrc );
+          }
           UploadFiles::findOrFail($id)->delete();
         }
         return response('Deleted Successfully', 200);
