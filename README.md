@@ -2,17 +2,13 @@
 
 Lumen Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
 
-## Contributing
+## Initialization Steps
 
-Install composer if it is not available in local machine
+Install php composer if it is not available in local machine
 
-Install Lumen Packages
+Install Lumen Packages : composer Install
 
-composer Install
-
-Run Server
-
-php -S localhost:8000 -t public
+Run Server : php -S localhost:8000 -t public
 
 ## License
 
