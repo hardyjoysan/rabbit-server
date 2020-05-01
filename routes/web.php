@@ -16,7 +16,8 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('files[/{page}/{keyword}]',  ['uses' => 'UploadFilesController@getFiles']);
+    $router->get('allfiles',  ['uses' => 'UploadFilesController@getAll']);
+    $router->get('files[/{page}[/{keyword}]]',  ['uses' => 'UploadFilesController@getFiles']);
     $router->get('history[/{page}]',  ['uses' => 'UploadFilesController@showHistory']);
     $router->post('upload-file', ['uses' => 'UploadFilesController@submitFile']);
     $router->delete('file/{id}', ['uses' => 'UploadFilesController@deleteFile']);
